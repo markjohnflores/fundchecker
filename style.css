@@ -1,0 +1,458 @@
+/* --- Base Styles --- */
+body {
+    display: grid;
+    grid-template-columns: 260px 1fr;
+    grid-template-rows: 70px 1fr auto;
+    min-height: 100vh;
+    margin: 0;
+    font-family: system-ui, -apple-system, sans-serif;
+    background-color: #f8f9eb;
+    color: #1a1a1a;
+}
+
+/* --- Sidebar Navigation --- */
+nav {
+    grid-column: 1;
+    grid-row: 1 / 4;
+    background-color: #f8f9eb;
+    padding: 24px;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 40px;
+}
+
+nav ul li {
+    margin-bottom: 16px;
+    padding: 10px 16px;
+    border-radius: 8px;
+    color: #4a5d51;
+    font-weight: 500;
+    transition: background-color 0.2s ease, color 0.2s ease;
+    cursor: pointer;
+    user-select: none;
+}
+
+nav ul li.active {
+    background-color: #e5ecd8;
+    color: #1b4d36;
+    font-weight: bold;
+}
+
+nav ul li:hover:not(.active) {
+    background-color: #f0f0f0;
+}
+
+nav a {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
+/* --- Header --- */
+.main-header {
+    grid-column: 2;
+    grid-row: 1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 40px;
+    background-color: #fff;
+    border-bottom: 1px solid #eaeaea;
+}
+
+.main-header p {
+    margin: 0;
+    color: #666;
+    font-size: 0.9rem;
+}
+.main-header a {
+    color: #1b4d36;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* --- Main Content Area --- */
+main {
+    grid-column: 2;
+    grid-row: 2;
+    padding: 40px;
+    background-color: #fff;
+    border-top-left-radius: 20px;
+    box-shadow: 0 -4px 20px rgba(0,0,0,0.02);
+}
+
+main.transaction-layout {
+    display: grid;
+    grid-template-columns: 2.5fr 1fr;
+    gap: 40px;
+}
+
+main section h2 {
+    font-size: 1.8rem;
+    margin-bottom: 8px;
+}
+
+/* --- Summary Cards (Overview Page) --- */
+main section:nth-of-type(2) {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 24px;
+    margin: 32px 0;
+}
+
+main article {
+    background: #fff;
+    padding: 24px;
+    border-radius: 12px;
+    border: 1px solid #eaeaea;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+}
+
+main article h3 {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    color: #666;
+    letter-spacing: 0.5px;
+    margin-top: 0;
+}
+
+main article p:nth-of-type(1) {
+    font-size: 2.2rem;
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+main article p:nth-of-type(2) {
+    font-size: 0.9rem;
+    color: #666;
+}
+
+main article:first-of-type {
+    background: #1b4d36;
+    color: #fff;
+}
+
+main article:first-of-type h3,
+main article:first-of-type p:nth-of-type(2) {
+    color: #a3c4b3;
+}
+
+main article:first-of-type a {
+    display: inline-block;
+    background: #fff;
+    color: #1b4d36;
+    padding: 8px 16px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 0.9rem;
+    margin-right: 12px;
+    margin-top: 16px;
+}
+
+/* --- Tables --- */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 24px;
+}
+
+th {
+    text-align: left;
+    padding: 12px 16px;
+    font-size: 0.85rem;
+    color: #666;
+    border-bottom: 2px solid #eaeaea;
+}
+
+td {
+    padding: 16px;
+    border-bottom: 1px solid #eaeaea;
+    font-size: 0.95rem;
+}
+
+td small {
+    color: #888;
+}
+
+/* --- Forms & Buttons --- */
+.page-title-section {
+    margin-bottom: 32px;
+}
+
+.back-link {
+    color: #666;
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 16px;
+}
+
+.styled-form {
+    background: #fff;
+    padding: 32px;
+    border: 1px solid #eaeaea;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.02);
+}
+
+.form-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    border-bottom: 1px solid #eaeaea;
+    padding-bottom: 16px;
+    margin-bottom: 12px;
+}
+
+.form-header h3 {
+    margin: 0;
+    font-size: 1.2rem;
+}
+
+.form-header small {
+    color: #888;
+}
+
+.form-subtitle {
+    color: #666;
+    margin-top: 0;
+    margin-bottom: 32px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 24px;
+}
+
+.form-group label, .form-group legend {
+    font-weight: bold;
+    margin-bottom: 8px;
+    font-size: 0.95rem;
+}
+
+.helper-text {
+    color: #888;
+    margin-top: 6px;
+    font-size: 0.85rem;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+}
+
+.no-border {
+    border: none;
+    padding: 0;
+}
+
+.radio-cards-container {
+    display: flex;
+    gap: 16px;
+}
+
+.radio-card-wrapper {
+    position: relative;
+    flex: 1;
+}
+
+.radio-card-wrapper input[type="radio"] {
+    position: absolute;
+    right: 20px;
+    top: 24px;
+    width: 18px;
+    height: 18px;
+    accent-color: #1b4d36;
+    cursor: pointer;
+}
+
+.radio-card-wrapper label {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #d1d1d1;
+    border-radius: 8px;
+    padding: 20px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    height: 100%;
+    box-sizing: border-box;
+}
+
+.radio-card-wrapper label strong {
+    font-size: 1.1rem;
+    margin-bottom: 4px;
+    color: #1a1a1a;
+}
+
+.radio-card-wrapper label span {
+    font-size: 0.85rem;
+    color: #666;
+}
+
+.radio-card-wrapper input[type="radio"]:checked + label {
+    border: 2px solid #1b4d36;
+    background-color: #eaf1ed;
+}
+
+.radio-card-wrapper input[type="radio"]:checked + label strong {
+    color: #1b4d36;
+}
+
+.form-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid #eaeaea;
+    padding-top: 24px;
+    margin-top: 32px;
+}
+
+.user-stamp {
+    color: #666;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+}
+
+.form-buttons {
+    display: flex;
+    gap: 12px;
+}
+
+button {
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 0.95rem;
+    border: none;
+}
+
+.btn-submit {
+    background-color: #1b4d36;
+    color: white;
+    border: 1px solid #1b4d36;
+}
+
+.btn-cancel {
+    background-color: transparent;
+    color: #1a1a1a;
+    border: 1px solid #d1d1d1;
+}
+
+/* --- Aside / Sidebar content (Transaction & Users Page) --- */
+aside {
+    background: #fafafa;
+    padding: 24px;
+    border-radius: 12px;
+    border: 1px solid #eaeaea;
+    height: fit-content;
+}
+
+/* --- Login Page --- */
+.login-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f8f9eb;
+    margin: 0;
+}
+
+.login-container {
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+    width: 100%;
+    max-width: 400px;
+    border: 1px solid #eaeaea;
+}
+
+.login-header {
+    text-align: center;
+    margin-bottom: 32px;
+}
+
+.login-header h2 {
+    color: #1b4d36;
+    margin-bottom: 8px;
+}
+
+.error-msg {
+    background: #ffebee;
+    color: #c62828;
+    padding: 12px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    font-size: 0.9rem;
+    text-align: center;
+}
+
+/* --- BULLETPROOF LOGIN FORM FIXES --- */
+.login-form .form-group {
+    display: flex !important;
+    flex-direction: column !important;
+    margin-bottom: 20px !important;
+}
+
+.login-input {
+    width: 100% !important;
+    padding: 12px 16px !important;
+    border: 1px solid #d1d1d1 !important;
+    border-radius: 8px !important;
+    box-sizing: border-box !important;
+    font-size: 1rem !important;
+    margin-top: 8px !important;
+    display: block !important; 
+}
+
+.login-form .checkbox-row {
+    flex-direction: row !important;
+    align-items: center !important;
+}
+
+.show-password-container {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.show-password-container input[type="checkbox"] {
+    width: 16px !important;
+    height: 16px !important;
+    margin: 0 !important;
+    cursor: pointer;
+}
+
+.login-btn {
+    width: 100% !important;
+    display: block !important;
+    margin-top: 10px !important;
+}
+
+/* --- GLOBAL FORM INPUT FIX --- */
+.styled-form input[type="text"],
+.styled-form input[type="password"],
+.styled-form input[type="number"],
+.styled-form input[type="date"],
+.styled-form select,
+.styled-form textarea {
+    width: 100% !important;
+    padding: 12px 16px !important;
+    border: 1px solid #d1d1d1 !important;
+    border-radius: 8px !important;
+    box-sizing: border-box !important;
+    font-size: 1rem !important;
+    margin-top: 8px !important;
+    display: block !important;
+    font-family: inherit !important;
+}
